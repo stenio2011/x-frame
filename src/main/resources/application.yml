@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/storage?autoReconnect=true&useSSL=false&characterEncoding=UTF-8&tinyInt1isBit=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    useSSL: false
+
+mybatis:
+  mapper-locations: classpath*:org/stenio/xframe/mapper/*Mapper.xml
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
