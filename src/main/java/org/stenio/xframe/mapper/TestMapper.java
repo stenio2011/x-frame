@@ -3,6 +3,8 @@ package org.stenio.xframe.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 /**
  * Created by bjhexin3 on 2017/6/6.
  */
@@ -13,4 +15,7 @@ public interface TestMapper {
     int test();
 
     int test2();
+
+    @Select("select 1 from file_item")
+    List<Integer> test3();
 }

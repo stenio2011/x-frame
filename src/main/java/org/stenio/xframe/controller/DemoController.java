@@ -1,10 +1,13 @@
 package org.stenio.xframe.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.stenio.xframe.mapper.TestMapper;
+
+import java.util.List;
 
 /**
  * Created by bjhexin3 on 2017/6/6.
@@ -26,6 +29,13 @@ public class DemoController {
     @RequestMapping("/test2")
     public int test2() {
         return testMapper.test2();
+    }
+
+    @RequestMapping("/test3")
+    public PageInfo<Integer> test3() {
+        PageHelper.startPage(1, 10);
+        List<Integer> integers = testMapper.test3();
+        return new PageInfo<>(integers);
     }
 }
 
