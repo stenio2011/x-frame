@@ -22,6 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+        <mybatis.generator.overwrite>true</mybatis.generator.overwrite>
+        <mybatis.generator.verbose>true</mybatis.generator.verbose>
 	</properties>
 
 	<dependencies>
@@ -80,6 +82,22 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.5</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <scope>runtime</scope>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+
+                </configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

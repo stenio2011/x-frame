@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="MySQL" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <property name="addRemarkComments" value="true"/>
+            <property name="dateFormat" value="yyyy-MM-dd HH;mm:ss"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/storage?characterEncoding=UTF-8"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+
+
+        <javaModelGenerator targetPackage="test.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="test.xml"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <!--<property name="rootInterface" value="com.xxx.InterfaceClass"/>-->
+        </javaClientGenerator>
+
+        <table tableName="file_item">
+
+        </table>
+
+    </context>
+</generatorConfiguration>
