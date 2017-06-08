@@ -24,16 +24,16 @@
 
 
 
-        <javaModelGenerator targetPackage="test.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="org.stenio.xframe.model.demo" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="test.xml"  targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="org.stenio.xframe.mapper.demo"  targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="test.dao"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="org.stenio.xframe.mapper.demo"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <!--<property name="rootInterface" value="com.xxx.InterfaceClass"/>-->
         </javaClientGenerator>
