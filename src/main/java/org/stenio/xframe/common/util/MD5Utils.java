@@ -25,7 +25,6 @@ public class MD5Utils {
         MessageDigest md5 = null;
         try {
             md5 = MessageDigest.getInstance("MD5");
-            BASE64Encoder base64en = new BASE64Encoder();
             //加密后的字符串
             byte[] digest = md5.digest(str.getBytes("UTF-8"));
             return byteToHexString(digest);
