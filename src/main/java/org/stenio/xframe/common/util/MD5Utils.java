@@ -3,7 +3,6 @@ package org.stenio.xframe.common.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.stenio.xframe.common.exception.RuntimeXFrameException;
-import sun.misc.BASE64Encoder;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -29,7 +28,7 @@ public class MD5Utils {
             byte[] digest = md5.digest(str.getBytes("UTF-8"));
             return byteToHexString(digest);
         } catch (NoSuchAlgorithmException | UnsupportedEncodingException e ) {
-            ExceptionUtil.logErrorAndThrow(logger, new RuntimeXFrameException(), "error to encode string : {}", str);
+            ExceptionUtils.logErrorAndThrow(logger, new RuntimeXFrameException(), "error to encode string : {}", str);
         }
         return null;
 
@@ -48,7 +47,7 @@ public class MD5Utils {
 
     private static String byteToHexString(byte[] bts) {
         if (bts == null || bts.length == 0) {
-            ExceptionUtil.logErrorAndThrow(logger, new RuntimeXFrameException("byte array is empty"), "byte array is empty");
+            ExceptionUtils.logErrorAndThrow(logger, new RuntimeXFrameException("byte array is empty"), "byte array is empty");
         }
         StringBuilder sb = new StringBuilder();
         for (byte bt : bts) {

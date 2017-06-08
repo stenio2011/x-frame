@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.stenio.xframe.common.domain.ResponseWrapper;
 import org.stenio.xframe.common.exception.RuntimeXFrameException;
-import org.stenio.xframe.common.util.ExceptionUtil;
+import org.stenio.xframe.common.util.ExceptionUtils;
 import org.stenio.xframe.mapper.demo.FileItemMapper;
 import org.stenio.xframe.mapper.demo.TestMapper;
 import org.stenio.xframe.model.demo.FileItem;
@@ -49,7 +49,7 @@ public class DemoController {
 
     @RequestMapping("/test4")
     public ResponseWrapper test4() {
-        ExceptionUtil.logErrorAndThrow(logger, new RuntimeXFrameException("heihei"), "message, {}, xxxs {}", "abc", "def");
+        ExceptionUtils.logErrorAndThrow(logger, new RuntimeXFrameException("heihei"), "message, {}, xxxs {}", "abc", "def");
         FileItemExample query = new FileItemExample();
         query.createCriteria().andDirEqualTo("/");
         List<FileItem> fileItems = fileItemMapper.selectByExample(query);

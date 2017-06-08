@@ -5,8 +5,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.stenio.xframe.common.exception.RuntimeXFrameException;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by bjhexin3 on 2017/6/8.
  */
@@ -21,7 +19,7 @@ public class ExceptionUtilTest {
     @Test
     public void logErrorAndThrow1() throws Exception {
         try {
-            ExceptionUtil.logErrorAndThrow(logger, new RuntimeXFrameException("heihei"), "message", "abc");
+            ExceptionUtils.logErrorAndThrow(logger, new RuntimeXFrameException("heihei"), "message", "abc");
         } catch (Exception e) {
 
         }

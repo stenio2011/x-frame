@@ -7,7 +7,7 @@ import org.stenio.xframe.common.exception.XFrameException;
 /**
  * Created by bjhexin3 on 2017/6/8.
  */
-public class ExceptionUtil {
+public class ExceptionUtils {
 
     public static void logErrorAndThrow(Logger logger, RuntimeXFrameException runtimeXFrameException, String message, Object... objects) {
         logger.error(message, objects);
