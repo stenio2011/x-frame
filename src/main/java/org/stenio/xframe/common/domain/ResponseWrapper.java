@@ -1,17 +1,21 @@
 package org.stenio.xframe.common.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
 /**
  * Created by bjhexin3 on 2017/6/7.
  */
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseWrapper<T> implements Serializable {
 
     private static final long serialVersionUID = 450987146805502229L;
 
     private int code = 200;
 
-    private String message = "";
+    private String message = null;
 
     private T data;
 
