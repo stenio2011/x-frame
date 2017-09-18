@@ -36,7 +36,6 @@ public class MD5Utils {
 
     private static String byteToHexString(byte bt) {
         int iRet = bt;
-        // System.out.println("iRet="+iRet);
         if (iRet < 0) {
             iRet += 256;
         }

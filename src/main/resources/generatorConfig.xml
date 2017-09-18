@@ -13,7 +13,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/storage?characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/tenement_online?characterEncoding=UTF-8"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -24,22 +24,22 @@
 
 
 
-        <javaModelGenerator targetPackage="org.stenio.xframe.model.demo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.common.tenement.entity.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="org.stenio.xframe.mapper.demo"  targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="com.common.tenement.dao"  targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="org.stenio.xframe.mapper.demo"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.common.tenement.dao"  targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <!--<property name="rootInterface" value="com.xxx.InterfaceClass"/>-->
         </javaClientGenerator>
 
-        <table tableName="file_item">
-
+        <table tableName="tenement_user_info">
+            <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" type="post" />
         </table>
 
     </context>

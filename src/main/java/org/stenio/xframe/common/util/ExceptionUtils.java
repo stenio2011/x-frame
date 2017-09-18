@@ -19,7 +19,8 @@ public class ExceptionUtils {
         throw xFrameException;
     }
 
-    public static void logInfoAndThrow(Logger logger, String message, Throwable throwable) {
-
+    public static void logInfoAndThrow(Logger logger, XFrameException xFrameException, String message, Object... objects) throws XFrameException {
+        logger.error(message, objects);
+        throw xFrameException;
     }
 }

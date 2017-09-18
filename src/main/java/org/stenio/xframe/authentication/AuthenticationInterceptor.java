@@ -19,21 +19,22 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        String requestURI = httpServletRequest.getRequestURI();
-        System.out.print(requestURI);
-        List<String> whiteUrlList = Arrays.asList(WHITE_LIST);
-        if (whiteUrlList.contains(requestURI)) {
-            return true;
-        }
-        Object userObj = httpServletRequest.getSession().getAttribute(SysUser.SESSION_SYS_USER_ATTRIBUTE);
-        if (userObj != null) {
-            SysUser sysUser = (SysUser) userObj;
-            SessionContextHolder.set(sysUser);
-            return true;
-        } else {
-            httpServletRequest.getRequestDispatcher("/authentication/redirect").forward(httpServletRequest, httpServletResponse);
-            return false;
-        }
+        return true;
+//        String requestURI = httpServletRequest.getRequestURI();
+//        System.out.print(requestURI);
+//        List<String> whiteUrlList = Arrays.asList(WHITE_LIST);
+//        if (whiteUrlList.contains(requestURI)) {
+//            return true;
+//        }
+//        Object userObj = httpServletRequest.getSession().getAttribute(SysUser.SESSION_SYS_USER_ATTRIBUTE);
+//        if (userObj != null) {
+//            SysUser sysUser = (SysUser) userObj;
+//            SessionContextHolder.set(sysUser);
+//            return true;
+//        } else {
+//            httpServletRequest.getRequestDispatcher("/authentication/redirect").forward(httpServletRequest, httpServletResponse);
+//            return false;
+//        }
     }
 
 }
